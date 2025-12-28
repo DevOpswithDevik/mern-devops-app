@@ -12,12 +12,14 @@ app.use(cors());
 app.use(express.json());
 
 // ROOT route (fixes 403)
-app.get("/", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({
-    message: "Backend is running 🚀",
-    status: "OK"
+    status: "UP",
+    service: "backend",
+    database: "connected"
   });
 });
+
 
 // Health check (DevOps MUST)
 app.get("/health", (req, res) => {
