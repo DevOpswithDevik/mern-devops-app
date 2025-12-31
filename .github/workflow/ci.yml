@@ -1,0 +1,36 @@
+name: MERN CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Build Backend
+        run: |
+          cd backend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
+
+      - name: Docker Build Backend
+        run: docker build -t mern-backend ./backend
+
+      - name: Docker Build Frontend
+        run: docker build -t mern-frontend ./frontend
