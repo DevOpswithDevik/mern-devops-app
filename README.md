@@ -1,6 +1,6 @@
 # 🚀 MERN App with CI/CD on AWS
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/mern-devops-app/ci.yml?branch=main)
+![Build Status](https://img.shields.io/github/actions/workflow/status//mern-devops-app/ci.yml?branch=main)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
 ![AWS](https://img.shields.io/badge/AWS-EC2-orange)
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success)
