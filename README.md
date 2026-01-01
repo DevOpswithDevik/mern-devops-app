@@ -4,7 +4,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
 ![AWS](https://img.shields.io/badge/AWS-EC2-orange)
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success)
-![License](https://img.shields.io/github/license/DevOpswithDevik/mern-devops-app)
+![License](https://img.shields.io/github/license/DevOpswithDevik/mern-devops-app?cacheSeconds=60)
 
 A **production-ready end-to-end MERN application** deployed on **AWS EC2** using **Docker**, **GitHub Actions CI/CD**, and **Nginx reverse proxy**.
 
