@@ -46,14 +46,14 @@ jobs:
 
       - name: Push Frontend Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/mern-frontend
-      
-     - name: Deploy to EC2
-       uses: appleboy/ssh-action@master
-       with:
-         host: ${{ secrets.EC2_HOST }}
-         username: ${{ secrets.EC2_USER }}
-         key: ${{ secrets.EC2_SSH_KEY }}
-         script: |
-           cd mern-devops-app
-           docker compose pull
-           docker compose up -d
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd mern-devops-app
+            docker compose pull
+            docker compose up -d
