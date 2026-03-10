@@ -1,16 +1,39 @@
+version: "3.8"
+
 services:
+
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
   backend:
     build: ./backend
+    container_name: backend
+    restart: always
     ports:
       - "5001:5000"
-    env_file:
-      - ./backend/.env
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/devopsdb
+      - JWT_SECRET=mysecretkey
+    depends_on:
+      - mongo
 
   frontend:
     build: ./frontend
+    container_name: frontend
+    restart: always
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_API_URL=http://localhost:5001/api
+      - REACT_APP_API_URL=http://51.20.140.86:5001/api
     depends_on:
       - backend
+
+volumes:
+  mongo-data:
